@@ -2,12 +2,48 @@ services:
   - docker
 
 env:
+  - distribution: Ubuntu
+    distribution_version: yakkety
+    init: /lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - distribution: Ubuntu
+    distribution_version: xenial
+    init: /lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - distribution: Ubuntu
+    distribution_version: trusty
+    init: /sbin/init
+    run_opts: ""
+  - distribution: Ubuntu
+    distribution_version: precise
+    init: /sbin/init
+    run_opts: ""
   - distribution: EL
     distribution_version: "7"
     init: /usr/lib/systemd/systemd
     run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - distribution: EL
+    distribution_version: "6"
+    init: /sbin/init
+    run_opts: ""
   - distribution: OracleLinux
     distribution_version: "7"
+    init: /usr/lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - distribution: OracleLinux
+    distribution_version: "6"
+    init: /sbin/init
+    run_opts: ""
+  - distribution: Fedora
+    distribution_version: "24"
+    init: /usr/lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - distribution: Fedora
+    distribution_version: "23"
+    init: /usr/lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - distribution: opensuse
+    distribution_version: "42.2"
     init: /usr/lib/systemd/systemd
     run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
 
