@@ -9,6 +9,13 @@
     - tar
     - wget
 
+- name: Create Groovy Base Directory
+  file:
+    path: "{{ groovy_base }}"
+    state: directory
+    owner: "{{ groovy_owner }}"
+    group: "{{ groovy_group }}"
+
 - name: Unarchive Groovy zip
   unarchive:
     src: "{{ groovy_download }}"
