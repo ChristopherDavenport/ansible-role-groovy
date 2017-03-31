@@ -10,7 +10,7 @@
     - role_under_test
   post_tasks:
     - name: Check Groovy Installation
-      command: groovysh -v
+      shell: groovysh -v
       changed_when: false
       register: __groovy_version
     - debug: var=__groovy_version
