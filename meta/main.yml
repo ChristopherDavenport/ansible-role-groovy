@@ -1,0 +1,21 @@
+dependencies:
+  - ChristopherDavenport.universal-java
+
+galaxy_info:
+  author: Christopher Davenport
+  description: Groovy
+  company: Eckerd College
+  license: MIT
+
+  min_ansible_version: 2.1
+
+  galaxy_tags:
+    - Deployment
+    - Groovy
+    - Programming Language
+    - GDK
+
+  platforms:
+    - name: EL
+      versions:
+          - 7
