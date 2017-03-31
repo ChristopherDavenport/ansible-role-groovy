@@ -11,10 +11,11 @@
 
 - name: Unarchive Groovy zip
   unarchive:
+    src: "{{ groovy_download }}"
     creates: "{{ groovy_directory }}"
     dest: "{{ groovy_base }}"
-    remote_src: "{{ groovy_download }}"
     validate_certs: yes
+    remote_src: yes
 
 - name: Create Link To Current Version
   file:
